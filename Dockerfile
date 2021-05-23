@@ -23,7 +23,7 @@ COPY .  /home/survey_app
 RUN chmod -R 755 /home/survey_app && chmod -R 777 /tmp
 
 # expose port on Docker container
-EXPOSE 4041
+EXPOSE 4042
 
 # install R packages required
 
