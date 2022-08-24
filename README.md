@@ -77,9 +77,7 @@ ls
 
 ```
 sudo service nginx restart
-```
 
-````
 http {
     map $http_upgrade $connection_upgrade {
         default upgrade;
@@ -89,7 +87,6 @@ http {
 
 
 ### Volume Mount docker
----------------------------------------------------------------------------------------------
 
 ```
 sudo docker -d -v  -i -t /home/panmgmt/nepal-map:/home/nepal-map
