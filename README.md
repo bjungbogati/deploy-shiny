@@ -37,8 +37,7 @@ auth_basic   		"Restricted Access!";
 auth_basic_user_file 	/etc/nginx/conf.d/.htpasswd; 
 ```
 
-#### Error /Acess log
----------------------------------------------
+### Error /Acess log
 
 ```
 access_log /var/www/logs/nepal_dash.access.log;
@@ -46,7 +45,6 @@ access_log /var/www/logs/nepal_dash.access.log;
 ```
 
 ### Edit Nginx config
-------------------------------------------
 
 ```
 cd /etc/nginx/sites-enabled/
@@ -97,11 +95,9 @@ http {
 sudo docker -d -v  -i -t /home/panmgmt/nepal-map:/home/nepal-map
 sudo docker -d -v  -i -t /home/panmgmt/unhabitat_project:/home/unhabitat_app
 sudo docker -d -v  -i -t /home/panmgmt/training_survey:/home/training_survey
-
 ```
 
 ### Server VALUE CHANGE
---------------------------------------------------------
 
 ```
 # sed -i -e 's/\blisten 3838\b/listen 4042/g' /etc/shiny-server/shiny-server.conf && \
@@ -127,7 +123,6 @@ sudo docker run -it --memory="1g" -d -v /home/panmgmt/Rpackages/:/home/rstudio/R
 
 ```
 sudo docker run -it -d -v /home/panmgmt/Rpackages/:/home/rstudio/Rpackages --rm -p 8787:8787 --name rstudio_server -e PASSWORD=wisemd -e USERID=$(id -u) -e GROUPID=$(id -g) bjungbogati/rstudio_server:latest
-
 ```
 
 ```
@@ -145,7 +140,6 @@ sudo docker -v /home/panmgmt/nepal_app:/home/nepal_app
 
 ```
 sudo docker rmi 993df4a57e1b
-
 ## tag with none remove images
 docker image prune --filter="dangling=true"
 ```
@@ -168,13 +162,11 @@ docker run -it -v "$(pwd)":/srv/shiny-server
 sudo docker run --name=latest -d -v /home/panmgmt/training_survey:/home/training_survey --rm -p 4041:4041 training_survey
 sudo docker run --name=latest -d -v /home/panmgmt/training_survey:/home/training_survey --rm -p 4042:4042 training_survey
 
-
 sudo docker run --name=latest -d --rm -p 4042:4042 deploy-shiny
 docker exec -ti container_name sh
 ```
 
 ### Build Run docker
------------------------------------------------------------------------------------------------
 
 ```
 sudo docker build -t training_survey ./
